@@ -1,0 +1,17 @@
+<%- include('partials/header'); -%>
+
+<h1 style="color:rgb(253, 118, 118)"><i>CREATE</i></h1>
+<br>
+<form action="/compose" method="post">
+  <div class="form group">
+    <label>Title</label>
+    <input class="form-control" type="text" name="postTitle">
+    <br>
+    <label>Post</label>
+    <textarea class="form-control" name="postContent" rows="8" cols="160"></textarea>
+    <br>
+    
+    <button type="submit" class="btn btn-lg btn-primary">Publish</button>
+  </div>
+</form>
+

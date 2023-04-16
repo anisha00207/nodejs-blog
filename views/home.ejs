@@ -1,0 +1,42 @@
+<%- include('partials/header'); -%>
+<div style="background-color:bisque">
+<center><h1 style ="color: rgb(253, 153, 135);">HOME</h1></center>
+
+<br>
+<p >
+<h4 >
+ <center> <i>A blog is something where you can save your expriences by posting them here!!  </i></center></h4>
+</p>
+<br>
+<center><p> <i> let's start from here create your first blog by clicking on <a href="/compose">CREATE</a>❤</i></p></center>
+<hr>
+<br>
+<br>
+<p> <%=home%> </p>
+
+<% posts.forEach(function(post) { %>
+
+  <div class="post">
+    <h3><b>TITLE : <a  href="/posts/<%= post.Title %>"><%= post.Title %></a></b></h3>
+    <p>
+      <%= post.Content.substr(0, 100).concat(" ....") %>
+      <br>
+      <a class="btn btn-sm btn-info stretched-link" href="/posts/<%= post.Title %>">Read More</a>
+    </p>
+    <form action="/delete" method="post">
+      <input type="hidden" name="postTitle" value="<%= post.Title %>">
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+
+<% }); %>
+
+
+
+
+</div>
+
+
+
+
+
