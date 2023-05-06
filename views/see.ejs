@@ -1,0 +1,30 @@
+<%- include('partials/header'); -%>
+<style>
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(253, 153, 135);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .button:hover {
+    background-color: rgb(240, 122, 98);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+</style>
+<a class="button back" href="/">HOME</a>
+<% posts.forEach(function(post) { %>
+  <div>
+    <h2><a href="/posts/<%=(post.Title) %>"><%= post.Title %></a></h2>
+    <p><%= post.Content %></p>
+  </div>
+  <hr>
+<% }); %>
